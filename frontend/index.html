@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishLens - Phishing Email Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TOP BAR
+         ===================================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🛡
+            </div>
+
+            <div>
+                <h1>PhishLens</h1>
+                <span>Phishing Email Analyzer</span>
+            </div>
+
+        </div>
+
+        <div class="api-status">
+
+            <span id="statusDot" class="status-dot"></span>
+
+            <span id="statusText">
+                Checking API...
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTAINER
+         ===================================================== -->
+
+    <main class="container">
+
+
+        <!-- =================================================
+             UPLOAD SECTION
+             ================================================= -->
+
+        <section class="upload-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Email Analysis</h2>
+
+                    <p>
+                        Upload an <strong>.eml</strong> file to
+                        analyze it for phishing indicators.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div
+                id="dropZone"
+                class="drop-zone"
+            >
+
+                <div class="upload-icon">
+                    📧
+                </div>
+
+                <h3>
+                    Drop your email here
+                </h3>
+
+                <p>
+                    or browse for an .eml file
+                </p>
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".eml"
+                    hidden
+                >
+
+                <button
+                    id="browseButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Browse File
+                </button>
+
+                <div
+                    id="selectedFile"
+                    class="selected-file"
+                ></div>
+
+            </div>
+
+
+            <div class="upload-actions">
+
+                <button
+                    id="analyzeButton"
+                    class="primary-button"
+                    type="button"
+                    disabled
+                >
+                    Analyze Email
+                </button>
+
+            </div>
+
+
+            <div
+                id="errorMessage"
+                class="error-message hidden"
+            ></div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <section
+            id="loadingSection"
+            class="loading-section hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <h3>
+                Analyzing Email
+            </h3>
+
+            <p>
+                PhishLens is examining the email headers,
+                URLs, attachments and authentication data.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             RESULTS
+             ================================================= -->
+
+        <section
+            id="resultsSection"
+            class="results-section hidden"
+        >
+
+
+            <!-- =============================================
+                 EMAIL OVERVIEW
+                 ============================================= -->
+
+            <section class="result-card email-overview-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>📧 Email Overview</h2>
+
+                        <p>
+                            Basic email metadata identified
+                            during analysis.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="email-overview-grid">
+
+                    <div class="email-field">
+
+                        <span class="email-field-label">
+                            From
+                        </span>
+
+                        <span
+                            id="emailFrom"
+                            class="email-field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="email-field">
+
+                        <span class="email-field-label">
+                            To
+                        </span>
+
+                        <span
+                            id="emailTo"
+                            class="email-field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="email-field">
+
+                        <span class="email-field-label">
+                            Reply-To
+                        </span>
+
+                        <span
+                            id="emailReplyTo"
+                            class="email-field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="email-field">
+
+                        <span class="email-field-label">
+                            Subject
+                        </span>
+
+                        <span
+                            id="emailSubject"
+                            class="email-field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="email-field">
+
+                        <span class="email-field-label">
+                            Date
+                        </span>
+
+                        <span
+                            id="emailDate"
+                            class="email-field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="email-field">
+
+                        <span class="email-field-label">
+                            Message-ID
+                        </span>
+
+                        <span
+                            id="emailMessageId"
+                            class="email-field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 RISK CARD
+                 ============================================= -->
+
+            <section class="risk-card">
+
+                <div class="risk-content">
+
+                    <div>
+
+                        <span class="risk-label">
+                            OVERALL RISK
+                        </span>
+
+                        <div
+                            id="riskLevel"
+                            class="risk-level"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+
+                    <div class="risk-score-container">
+
+                        <span class="risk-label">
+                            RISK SCORE
+                        </span>
+
+                        <div
+                            id="riskScore"
+                            class="risk-score"
+                        >
+                            0/100
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 STATISTICS
+                 ============================================= -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        🔗
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            URLs
+                        </span>
+
+                        <strong id="urlCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        📎
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Attachments
+                        </span>
+
+                        <strong id="attachmentCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        📋
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Header Findings
+                        </span>
+
+                        <strong id="headerCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon">
+                        🔐
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Auth Findings
+                        </span>
+
+                        <strong id="authCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =============================================
+                 DETECTION SUMMARY
+                 ============================================= -->
+
+            <section class="result-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            🎯 Detection Summary
+                        </h2>
+
+                        <p>
+                            Key indicators identified by
+                            PhishLens.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <ul
+                    id="summaryList"
+                    class="summary-list"
+                ></ul>
+
+            </section>
+
+
+            <!-- =============================================
+                 URL RESULTS
+                 ============================================= -->
+
+            <section
+                id="urlResultsCard"
+                class="result-card hidden"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            🔗 URL Analysis
+                        </h2>
+
+                        <p>
+                            URLs extracted and analyzed
+                            from the email.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="urlResults"
+                    class="results-list"
+                ></div>
+
+            </section>
+
+
+            <!-- =============================================
+                 ATTACHMENT RESULTS
+                 ============================================= -->
+
+            <section
+                id="attachmentResultsCard"
+                class="result-card hidden"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            📎 Attachment Analysis
+                        </h2>
+
+                        <p>
+                            Files attached to the email
+                            and associated risks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="attachmentResults"
+                    class="results-list"
+                ></div>
+
+            </section>
+
+
+            <!-- =============================================
+                 HEADER RESULTS
+                 ============================================= -->
+
+            <section
+                id="headerResultsCard"
+                class="result-card hidden"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            📋 Header Analysis
+                        </h2>
+
+                        <p>
+                            Suspicious characteristics
+                            identified in email headers.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="headerResults"
+                    class="results-list"
+                ></div>
+
+            </section>
+
+
+            <!-- =============================================
+                 AUTHENTICATION RESULTS
+                 ============================================= -->
+
+            <section
+                id="authenticationResultsCard"
+                class="result-card hidden"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            🔐 Authentication Analysis
+                        </h2>
+
+                        <p>
+                            Email authentication and
+                            trust indicators.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="authenticationResults"
+                    class="results-list"
+                ></div>
+
+            </section>
+
+
+            <!-- =============================================
+                 CORRELATION RESULTS
+                 ============================================= -->
+
+            <section
+                id="correlationResultsCard"
+                class="result-card hidden"
+            >
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            🔎 Correlation Analysis
+                        </h2>
+
+                        <p>
+                            Relationships between multiple
+                            phishing indicators.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="correlationResults"
+                    class="results-list"
+                ></div>
+
+            </section>
+
+
+            <!-- =============================================
+                 RESET
+                 ============================================= -->
+
+            <div class="reset-container">
+
+                <button
+                    id="resetButton"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Analyze Another Email
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <p>
+            PhishLens — Local Phishing Email Analysis Tool
+        </p>
+
+        <p>
+            Built for cybersecurity analysis and training
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

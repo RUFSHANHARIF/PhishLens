@@ -1,0 +1,23 @@
+From: security@example.com
+To: analyst@example.com
+Subject: URL Edge Case Test
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <url-edge@example.com>
+MIME-Version: 1.0
+Content-Type: text/plain
+
+Please review these links:
+
+http://192.0.2.10/login
+
+http://example.com:8080/admin
+
+http://example.com@evil.example.net/login
+
+http://example.com/%76%65%72%69%66%79
+
+http://example.com/redirect?url=http://evil.example.net
+
+http://example.com/login?a=1&b=2&c=3&d=4&e=5&f=6
+
+http://very-long-subdomain-name.example.com/this/is/a/very/long/path/used/for/testing/security/analysis/and/url/detection/behavior/inside/phishlens

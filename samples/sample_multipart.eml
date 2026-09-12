@@ -1,0 +1,54 @@
+From: Finance Department <finance@example.com>
+To: analyst@example.com
+Reply-To: billing@example.net
+Subject: Urgent Invoice Review
+Date: Sun, 23 Aug 2026 10:30:00 +0530
+Message-ID: <training-phish-002@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY123"
+
+--BOUNDARY123
+Content-Type: multipart/alternative; boundary="ALTBOUNDARY"
+
+--ALTBOUNDARY
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Customer,
+
+Your invoice requires immediate review.
+
+Please verify the invoice using the link below:
+
+http://example.net/invoice-review
+
+Regards,
+Finance Department
+
+--ALTBOUNDARY
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+<body>
+<p>Dear Customer,</p>
+
+<p><strong>Your invoice requires immediate review.</strong></p>
+
+<p>
+<a href="http://example.net/invoice-review">
+Review Invoice
+</a>
+</p>
+
+</body>
+</html>
+
+--ALTBOUNDARY--
+
+--BOUNDARY123
+Content-Type: application/pdf
+Content-Disposition: attachment; filename="invoice.pdf"
+Content-Transfer-Encoding: base64
+
+VGhpcyBpcyBhIHRyYWluaW5nIGZha2UgUERGIGF0dGFjaG1lbnQu
+
+--BOUNDARY123--

@@ -1,0 +1,21 @@
+From: security@example.com
+To: analyst@example.com
+Subject: Bad Attachment Encoding Test
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <bad-encoding@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BADENC"
+
+--BADENC
+Content-Type: text/plain
+
+Please review the attached document.
+
+--BADENC
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="invoice.exe"
+
+THIS_IS_NOT_VALID_BASE64!!!!@@@@####
+
+--BADENC--

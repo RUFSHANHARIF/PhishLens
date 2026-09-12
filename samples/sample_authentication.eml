@@ -1,0 +1,14 @@
+From: Microsoft Security <security@example.com>
+To: analyst@example.com
+Reply-To: account-review@example.net
+Subject: Urgent Account Verification
+Date: Thu, 3 Sep 2026 10:00:00 +0530
+Message-ID: <training-auth-001@example.com>
+Authentication-Results: mail.example.com; spf=fail smtp.mailfrom=example.com; dkim=fail header.d=example.com; dmarc=fail header.from=example.com
+Received-SPF: fail (mail.example.com: domain of example.com does not designate 192.0.2.50 as permitted sender)
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+
+Urgent security verification required.
+
+Please verify your account immediately.

@@ -1,0 +1,11 @@
+From: "Security Team" <security@example.com>
+To: analyst@example.com
+Subject: Test 🚨 Security Alert
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <unusual-header@example.com>
+X-Test-Header: !!!@@@###$$$%%%
+X-Custom-Header: very-long-value-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+MIME-Version: 1.0
+Content-Type: text/plain
+
+This is a test email with unusual header values.

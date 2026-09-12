@@ -1,0 +1,24 @@
+From: Microsoft Security <security@example.com>
+To: analyst@example.com
+Reply-To: account-review@example.net
+Subject: Security Alert
+Date: Sun, 23 Aug 2026 11:00:00 +0530
+Message-ID: <training-phish-003@example.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Received: from workstation.example.local (192.0.2.10)
+        by mail.example.net with ESMTPS;
+        Sun, 23 Aug 2026 10:59:50 +0530
+Received: from smtp.example.org (198.51.100.20)
+        by workstation.example.local with SMTP;
+        Sun, 23 Aug 2026 10:59:40 +0530
+Received: from unknown.example.net (203.0.113.50)
+        by smtp.example.org with ESMTP;
+        Sun, 23 Aug 2026 10:59:30 +0530
+
+Your account requires immediate verification.
+
+Please visit http://example.net/security-check
+
+Regards,
+Security Team

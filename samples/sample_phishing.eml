@@ -1,0 +1,17 @@
+From: Microsoft Security <security@example.com>
+To: analyst@example.com
+Reply-To: account-review@example.net
+Subject: Urgent: Verify Your Account
+Date: Sun, 23 Aug 2026 10:00:00 +0530
+Message-ID: <training-phish-001@example.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+
+Your account requires immediate verification.
+
+Please visit http://example.net/account-verification
+
+If you do not verify your account, access may be restricted.
+
+Regards,
+Security Team

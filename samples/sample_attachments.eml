@@ -1,0 +1,32 @@
+From: security@example.com
+To: analyst@example.com
+Subject: Urgent Security Update
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <attachment-test@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY123"
+
+--BOUNDARY123
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+Please review the attached security update immediately.
+
+Regards,
+Security Team
+
+--BOUNDARY123
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="Security_Update.exe"
+Content-Transfer-Encoding: base64
+
+SGVsbG8gUGhpc2hMZW5z
+--BOUNDARY123
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="Invoice.pdf.exe"
+Content-Transfer-Encoding: base64
+
+SW52b2ljZSBQREYgRXhlYw==
+--BOUNDARY123--
+

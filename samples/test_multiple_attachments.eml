@@ -1,0 +1,32 @@
+From: security@example.com
+To: analyst@example.com
+Subject: Multiple Attachment Test
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <multiple-attachments@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="MULTI"
+
+--MULTI
+Content-Type: text/plain
+
+Please review these files.
+
+--MULTI
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="invoice.pdf"
+
+Fake invoice data
+
+--MULTI
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="Security_Update.exe"
+
+Fake executable data
+
+--MULTI
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="document.txt"
+
+Normal text data
+
+--MULTI--

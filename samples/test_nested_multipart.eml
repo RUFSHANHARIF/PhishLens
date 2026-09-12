@@ -1,0 +1,30 @@
+From: security@example.com
+To: analyst@example.com
+Subject: Nested MIME Test
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <nested-mime@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="OUTER"
+
+--OUTER
+Content-Type: multipart/alternative; boundary="INNER"
+
+--INNER
+Content-Type: text/plain
+
+Please review this message.
+
+--INNER
+Content-Type: text/html
+
+<html><body>Please review this message.</body></html>
+
+--INNER--
+
+--OUTER
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="urgent_update.exe"
+
+Fake executable data
+
+--OUTER--

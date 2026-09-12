@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend backups
+*.backup
+*.backup-*
+*.before-*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,15 @@
+From: security@example.com
+To: analyst@example.com
+Subject: Duplicate Header Test
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <duplicate-headers@example.com>
+Received: from mail1.example.com (mail1.example.com [192.0.2.10])
+        by mail2.example.com with ESMTP;
+        Thu, 27 Aug 2026 09:59:00 +0530
+Received: from mail0.example.com (mail0.example.com [192.0.2.20])
+        by mail1.example.com with ESMTP;
+        Thu, 27 Aug 2026 09:58:00 +0530
+MIME-Version: 1.0
+Content-Type: text/plain
+
+This email contains multiple Received headers.

@@ -1,0 +1,20 @@
+From: security@example.com
+To: analyst@example.com
+Subject: MIME Mismatch Test
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <mime-mismatch@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="MIME"
+
+--MIME
+Content-Type: text/plain
+
+Please review the attached file.
+
+--MIME
+Content-Type: application/pdf
+Content-Disposition: attachment; filename="invoice.exe"
+
+Fake executable content
+
+--MIME--

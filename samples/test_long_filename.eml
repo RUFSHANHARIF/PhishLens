@@ -1,0 +1,20 @@
+From: security@example.com
+To: analyst@example.com
+Subject: Long Filename Test
+Date: Thu, 27 Aug 2026 10:00:00 +0530
+Message-ID: <long-filename@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="LONG"
+
+--LONG
+Content-Type: text/plain
+
+Please review the attachment.
+
+--LONG
+Content-Type: application/pdf
+Content-Disposition: attachment; filename="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.pdf"
+
+Test attachment data
+
+--LONG--

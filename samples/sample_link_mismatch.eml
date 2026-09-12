@@ -1,0 +1,45 @@
+From: Microsoft Security <security@example.com>
+To: analyst@example.com
+Reply-To: security-review@example.net
+Subject: Account Verification Required
+Date: Mon, 24 Aug 2026 12:00:00 +0530
+Message-ID: <training-mismatch-001@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="MISMATCHBOUNDARY"
+
+--MISMATCHBOUNDARY
+Content-Type: text/plain; charset="UTF-8"
+
+Hello Analyst,
+
+Please review your account using the link below:
+
+https://example.com/account
+
+Regards,
+Security Team
+
+--MISMATCHBOUNDARY
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+<body>
+
+<p>Hello Analyst,</p>
+
+<p>Normal link:</p>
+
+<a href="https://example.com/account">
+Open Example Account
+</a>
+
+<p>Suspicious mismatched link:</p>
+
+<a href="http://evil.example.net/login">
+Verify Microsoft Account
+</a>
+
+</body>
+</html>
+
+--MISMATCHBOUNDARY--

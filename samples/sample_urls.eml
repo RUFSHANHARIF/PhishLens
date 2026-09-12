@@ -1,0 +1,124 @@
+From: Security Team <security@example.com>
+To: analyst@example.com
+Reply-To: security-review@example.net
+Subject: URL Analysis Training Email
+Date: Mon, 24 Aug 2026 10:00:00 +0530
+Message-ID: <training-url-001@example.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="URLBOUNDARY"
+
+--URLBOUNDARY
+Content-Type: text/plain; charset="UTF-8"
+
+Hello Analyst,
+
+This email contains several URL test cases.
+
+Normal HTTP URL:
+http://example.com/login
+
+Normal HTTPS URL:
+https://example.com/account
+
+IP-based URL:
+http://192.0.2.50/login
+
+Unusual port URL:
+http://example.com:8080/login
+
+Deep subdomain URL:
+https://login.microsoft.com.security-check.example.net/account
+
+Suspicious keyword URL:
+https://example.com/account/verify-password
+
+Long URL:
+https://example.com/account/verify?session=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&redirect=https://example.com/security/update-password
+
+Redirect URL:
+https://example.com/login?redirect=https://evil.example.net/login
+
+Many Parameters URL:
+https://example.com/login?user=analyst&session=12345&redirect=https://example.com/account&next=/security&tracking=abc123&source=email
+
+Regards,
+Security Team
+
+--URLBOUNDARY
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+<body>
+
+<p>Hello Analyst,</p>
+
+<p>Normal HTML link:</p>
+
+<a href="https://example.com/account">
+Open Account
+</a>
+
+<p>Mismatched link:</p>
+
+<a href="http://evil.example.net/login">
+Verify Microsoft Account
+</a>
+
+<p>IP-based link:</p>
+
+<a href="http://192.0.2.50/login">
+Open Security Portal
+</a>
+
+<p>Unusual port link:</p>
+
+<a href="http://example.com:8080/login">
+Open Web Portal
+</a>
+
+<p>Obfuscated URL:</p>
+
+<a href="https://example.com@evil.example.net/login">
+Open Secure Account
+</a>
+
+<p>Encoded URL:</p>
+
+<a href="https://example.com/%6c%6f%67%69%6e">
+Open Encoded Login
+</a>
+
+<p>Deep subdomain URL:</p>
+
+<a href="https://login.microsoft.com.security-check.example.net/account">
+Open Microsoft Account
+</a>
+
+<p>Suspicious keyword URL:</p>
+
+<a href="https://example.com/account/verify-password">
+Verify Your Account
+</a>
+
+<p>Long URL:</p>
+
+<a href="https://example.com/account/verify?session=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&redirect=https://example.com/security/update-password">
+Continue Security Verification
+</a>
+
+<p>Redirect URL:</p>
+
+<a href="https://example.com/login?redirect=https://evil.example.net/login">
+Continue to Account
+</a>
+
+<p>Many Parameters URL:</p>
+
+<a href="https://example.com/login?user=analyst&session=12345&redirect=https://example.com/account&next=/security&tracking=abc123&source=email">
+Review Account
+</a>
+
+</body>
+</html>
+
+--URLBOUNDARY--

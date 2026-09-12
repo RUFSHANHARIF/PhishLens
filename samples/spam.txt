@@ -1,0 +1,41 @@
+1wry2x-00000003tnC-0BHU-H
+ mailnull 47 12
+ <info@pblinkup.com>
+ 1786022524 0
+ -received_time_usec .490338
+ -received_time_complete 1786022524.685425
+ --helo_name b3dc5861.virtua.com.br
+ -host_address [179.220.88.97]:51153
+ -host_auth dovecot_login
+ -host_auth_pubname LOGIN
+ -interface_address [69.167.152.5]:465
+ -received_protocol esmtpsa
+ -aclm _outbound_recipient 1
+ 1
+ -body_linecount 48
+ -max_received_linelength 122
+ --auth_id info@pblinkup.com
+ -host_lookup_failed
+ -tls_cipher TLS1.3:TLS_AES_256_GCM_SHA384:256
+ --tls_sni pblinkup.com
+
+ -tls_resumption B
+ -tls_ver TLS1.3
+ XX
+ 1
+ lucidalva.malta@omegaservicos.com.br
+ 
+ 299P Received: from [179.220.88.97] (port=51153 helo=b3dc5861.virtua.com.br)
+     by host2.bytrix.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+     (Exim 4.99.5)
+     (envelope-from <info@pblinkup.com>)
+     id 1wry2x-00000003tnC-0BHU
+     for lucidalva.malta@omegaservicos.com.br;
+     Thu, 06 Aug 2026 09:22:04 -0400
+ 048F From: Correios_Informe 3882 <info@pblinkup.com>
+ 041T To: lucidalva.malta@omegaservicos.com.br
+ 123  Subject: Encomenda taxada. 72h para devolu=?UTF-8?B?w6fDo28gYW8gcmVtZXRlbnRlLiAtIFByb3RvY29sbzogMjAyNndjd3llcnZ6ZmhkZg==?=
+ 032  Date: 6 Aug 2026 09:21:37 -0400
+ 018  MIME-Version: 1.0
+ 024  Content-Type: text/html
+ 044  Content-Transfer-Encoding: quoted-printable

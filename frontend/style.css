@@ -1264,23 +1264,10 @@ input:focus-visible {
     }
 
 }
+
 /* ============================================================
    CORRELATION ANALYSIS
    ============================================================ */
-
-.correlation-section-heading {
-    margin: 20px 0 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border-color, #263241);
-
-    font-size: 12px;
-    font-weight: 700;
-
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-
-    color: #7f8ea3;
-}
 
 .correlation-section-heading:first-child {
     margin-top: 0;
@@ -1295,8 +1282,7 @@ input:focus-visible {
     border-left: 3px solid #f59e0b;
 }
 
-.correlation-score-item
-.result-item-description {
+.correlation-score-item .result-item-description {
     font-size: 18px;
     font-weight: 700;
 }
@@ -1326,8 +1312,7 @@ input:focus-visible {
         font-size: 11px;
     }
 
-    .correlation-score-item
-    .result-item-description {
+    .correlation-score-item .result-item-description {
         font-size: 16px;
     }
 

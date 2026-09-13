@@ -1180,6 +1180,11 @@ function displayHeaderResults(
 
     }
 
+
+    /* --------------------------------------------------------
+       Header Findings
+       -------------------------------------------------------- */
+
     indicators.forEach(
         (indicator, index) => {
 
@@ -1189,7 +1194,7 @@ function displayHeaderResults(
                     formatIndicatorText(
                         indicator
                     ),
-                    score,
+                    undefined,
                     []
                 );
 
@@ -1199,6 +1204,57 @@ function displayHeaderResults(
 
         }
     );
+
+
+    /* --------------------------------------------------------
+       Total Header Risk Score
+       -------------------------------------------------------- */
+
+    if (score > 0) {
+
+        const scoreItem =
+            document.createElement(
+                "div"
+            );
+
+        scoreItem.className =
+            "result-item header-score-item";
+
+        const scoreTitle =
+            document.createElement(
+                "div"
+            );
+
+        scoreTitle.className =
+            "result-item-title";
+
+        scoreTitle.textContent =
+            "Header Risk Score";
+
+        const scoreDescription =
+            document.createElement(
+                "div"
+            );
+
+        scoreDescription.className =
+            "result-item-description";
+
+        scoreDescription.textContent =
+            `${score}/100`;
+
+        scoreItem.appendChild(
+            scoreTitle
+        );
+
+        scoreItem.appendChild(
+            scoreDescription
+        );
+
+        container.appendChild(
+            scoreItem
+        );
+
+    }
 
 }
 
@@ -1286,7 +1342,7 @@ function displayAuthenticationResults(
                     formatIndicatorText(
                         indicator
                     ),
-                    score,
+                    undefined,
                     []
                 );
 
@@ -1296,6 +1352,57 @@ function displayAuthenticationResults(
 
         }
     );
+
+
+    /* --------------------------------------------------------
+       Total Authentication Risk Score
+       -------------------------------------------------------- */
+
+    if (score > 0) {
+
+        const scoreItem =
+            document.createElement(
+                "div"
+            );
+
+        scoreItem.className =
+            "result-item authentication-score-item";
+
+        const scoreTitle =
+            document.createElement(
+                "div"
+            );
+
+        scoreTitle.className =
+            "result-item-title";
+
+        scoreTitle.textContent =
+            "Authentication Risk Score";
+
+        const scoreDescription =
+            document.createElement(
+                "div"
+            );
+
+        scoreDescription.className =
+            "result-item-description";
+
+        scoreDescription.textContent =
+            `${score}/100`;
+
+        scoreItem.appendChild(
+            scoreTitle
+        );
+
+        scoreItem.appendChild(
+            scoreDescription
+        );
+
+        container.appendChild(
+            scoreItem
+        );
+
+    }
 
 }
 
@@ -1390,13 +1497,17 @@ function displayCorrelationResults(
     if (score > 0) {
 
         const scoreItem =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         scoreItem.className =
             "result-item correlation-score-item";
 
         const scoreTitle =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         scoreTitle.className =
             "result-item-title";
@@ -1405,7 +1516,9 @@ function displayCorrelationResults(
             "Correlation Risk Score";
 
         const scoreDescription =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         scoreDescription.className =
             "result-item-description";
